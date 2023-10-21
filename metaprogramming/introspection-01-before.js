@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+
+console.log('version:', process.version);
+console.log('versions:', process.versions);
+console.log('arch:', process.arch);
+console.log('platform:', process.platform);
+console.log('release: ', process.release);
+console.log('moduleLoadList:', process.moduleLoadList);
+console.log('_events:', process._events);
+console.log('_eventsCount:', process._eventsCount);
+console.log('_maxListeners:', process._maxListeners);
+console.log('domain:', process.domain);
+console.log('_exiting:', process._exiting);
+console.log('exitCode:', process.exitCode);
+console.log('config:', process.config);
+console.log('allowedNodeEnvironmentFlags:', process.allowedNodeEnvironmentFlags);
+console.log('features:', process.features);
+console.log('sourceMapsEnabled:', process.sourceMapsEnabled);
+console.log('stdout:', process.stdout);
+console.log('stdin:', process.stdin);
+console.log('stderr:', process.stderr);
+console.log('env:', process.env);
+console.log('title:', process.title);
+console.log('argv:', process.argv);
+console.log('execArgv:', process.execArgv);
+console.log('pid:', process.pid);
+console.log('ppid:', process.ppid);
+console.log('execPath:', process.execPath);
+console.log('debugPort:', process.debugPort);
+console.log('argv0:', process.argv0);
+console.log('_preload_modules:', process._preload_modules);
+console.log('report:', process.report);
+console.log('mainModule:', process.mainModule);
