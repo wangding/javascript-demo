@@ -6,7 +6,7 @@ const type = obj => Object.prototype
                           .call(obj)
                           .replace('[object ', '')
                           .replace(']', '');
-function methods(obj) {
+function propertys(obj) {
   const arr1 = Object.getOwnPropertyNames(obj),
         arr2 = Object.getOwnPropertyNames(Object.getPrototypeOf(obj));
   if(type(obj) == 'Object') arr2.length = 0;
@@ -16,16 +16,15 @@ function methods(obj) {
 /* ----------------------------------------- */
 // 运行时可以查出语言构件，自省
 class Greeting {
-  constructor(text) { this.#text = text; }
-  welcome() { log(this.#text); }
+  constructor(text) { this.text = text; }
+  welcome() { log(this.text); }
   [Symbol.toStringTag] = 'Greeting';
-  #text = '';
 }
 
 let obj = new Greeting('hello');
 
 log("obj's class:    ", type(obj));
-log("obj's propertys:", methods(obj));
+log("obj's propertys:", propertys(obj));
 
 obj = {
   name: 'lisi',
@@ -34,9 +33,9 @@ obj = {
 }
 
 log("\nobj's class:    ", type(obj));
-log("obj's propertys:", methods(obj));
+log("obj's propertys:", propertys(obj));
 
 // 运行时可以添加语言构件
 obj.gender = 'M';
 obj.work = () => log('do something...');
-log("obj's propertys:", methods(obj));
+log("obj's propertys:", propertys(obj));
