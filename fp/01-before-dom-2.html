@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>dom</title>
+</head>
+<body>
+  <div id="msg"></div>
+  <script>
+    function printMessage(elementId, tag, message) {
+      document.querySelector(`#${elementId}`)
+              .innerHTML = `<${tag}>${message}</${tag}>`;
+    }
+    printMessage('msg', 'h1', 'hello world');
+  </script>
+</body>
+</html>

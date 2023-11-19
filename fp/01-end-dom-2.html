@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>dom</title>
+</head>
+<body>
+  <div id="msg"></div>
+  <script>
+    const echo = msg => msg;
+    const h2 = msg => `<h2>${msg}</h2>`;
+    const repeat = n => msg => msg.repeat(n);
+    const addToDom = elementId => msg =>
+      document.querySelector(elementId)
+              .innerHTML = msg;
+    const printMessage = run(console.log, repeat(3), h2, echo);
+    printMessage('hello world');
+    /* --------------------------------------------------- */
+    function run(...fns) {
+      return msg => {
+        let result = msg;
+        fns.reverse().forEach(fn => result=fn(result));
+      }
+    }
+  </script>
+</body>
+</html>
